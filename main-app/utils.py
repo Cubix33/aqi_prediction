@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from prophet import Prophet
+import streamlit as st
 
 def get_city_data(df, city):
     city_df = df[df['City'] == city][['Date', 'AQI']].dropna()
