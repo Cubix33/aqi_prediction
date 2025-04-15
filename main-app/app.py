@@ -26,7 +26,7 @@ city_df = get_city_data(df, selected_city)
 
 # Show latest AQI
 latest = city_df.sort_values("Date").iloc[-1]
-st.metric("📅 Latest Date", latest['Date'].date())
+st.metric("📅 Latest Date", latest['Date'].strftime("%d %b %Y"))
 st.metric("🌡️ Latest AQI", f"{latest['AQI']:.2f}")
 
 # Plot historical trend
