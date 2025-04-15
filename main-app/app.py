@@ -14,7 +14,7 @@ st.markdown("Predict and visualize future AQI trends using machine learning and 
 # Load and cache data
 @st.cache_data
 def load_data():
-    df = pd.read_csv("data/city_day.csv")
+    df = pd.read_csv("main-app/data/city_day.csv")
     df['Date'] = pd.to_datetime(df['Date'])
     return df
 
