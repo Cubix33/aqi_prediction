@@ -34,7 +34,7 @@ st.subheader("📉 Historical AQI Trend")
 plot_city_trend(city_df)
 
 # Forecast future AQI
-st.subheader("Forecast Future AQI")
+st.subheader("🔮 Forecast Future AQI")
 n_days = st.slider("Forecast Days", 30, 365, 180)
 forecast, model = forecast_with_prophet(city_df, n_days)
 

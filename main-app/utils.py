@@ -9,7 +9,7 @@ def get_city_data(df, city):
     return city_df
 
 def forecast_with_prophet(city_df, periods=180):
-    df_prophet = city_df.rename(columns={"Date": "ds", "AQI": "yhat"})
+    df_prophet = city_df.rename(columns={"Date": "ds", "AQI": "y"})
     model = Prophet()
     model.fit(df_prophet)
 
@@ -26,4 +26,3 @@ def plot_city_trend(city_df):
     ax.grid(True)
     plt.tight_layout()
     st.pyplot(fig)
-
