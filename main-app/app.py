@@ -34,7 +34,7 @@ st.subheader("📉 Historical AQI Trend")
 plot_city_trend(city_df)
 
 # Forecast future AQI
-st.subheader("🔮 Forecast Future AQI")
+st.subheader("Forecast Future AQI")
 n_days = st.slider("Forecast Days", 30, 365, 180)
 forecast, model = forecast_with_prophet(city_df, n_days)
 
@@ -61,7 +61,7 @@ def aqi_category(aqi):
         return "Hazardous"
 
 st.write("### 🚦 AQI Categories (Forecasted)")
-forecast_display = forecast[['ds', 'yhat']].copy()
-forecast_display['AQI Category'] = forecast_display['yhat'].apply(aqi_category)
+forecast_display = forecast[['Date of Prediction', 'Predicted AQI']].copy()
+forecast_display['AQI Category'] = forecast_display['Predicted AQI'].apply(aqi_category)
 st.dataframe(forecast_display.tail(10))
 
