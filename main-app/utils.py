@@ -9,7 +9,7 @@ def get_city_data(df, city):
     return city_df
 
 def forecast_with_prophet(city_df, periods=180):
-    df_prophet = city_df.rename(columns={"Date": "Date of Prediction", "AQI": "AQI"})
+    df_prophet = city_df.rename(columns={"Date": "ds", "AQI": "yhat"})
     model = Prophet()
     model.fit(df_prophet)
 
